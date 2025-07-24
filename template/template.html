@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .wrapper{
+            height: 100%;
+            padding: 50px 0;
+        }
+        #editArea, #previewArea{
+            float:left;
+            width: 50%;
+            height: 100%;
+            border: 1px solid #000;
+        }
+        .btn-area{
+            position:fixed;
+            top: 0;
+            left:0;
+        }
+    </style>
+    <script src="template.js" defer></script>
+</head>
+<body>
+    <div class="btn-area">
+        <select id="template" onchange="changeTemplate(event)">
+            <option value="register">등록</option>
+            <option value="detail">상세</option>
+        </select>
+        <input type="button" value="저장" onclick="saveTemplate()">
+    </div>
+    <div class="wrapper">
+        <textarea id="editArea"></textarea>
+        <div id="previewArea"></div>
+    </div>
+</body>
+</html>
