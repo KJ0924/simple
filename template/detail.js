@@ -13,7 +13,9 @@ function getData(){
     .then(res=>res.json())
     .then(result => {
         for(const [key, val] of Object.entries(result)){
-            document.querySelector("#"+key).innerText=val;
+            if(document.querySelector("#"+key)){
+                document.querySelector("#"+key).innerText=val;
+            }
         }
     });
 }
